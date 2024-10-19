@@ -63,5 +63,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
           cd /home/itstep/groupProject/frontend
           tar -xzvf react-app.tar.gz
-          cd ..  
+          rm react-app.tar.gz
+          cd ..
+          docker compose down --rmi all
+          docker compose up -d --build  
           EOF

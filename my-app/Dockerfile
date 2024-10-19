@@ -2,7 +2,7 @@ FROM node:20
 
 WORKDIR /usr/src/app
 
-COPY build .
+COPY . .
 
 RUN npm install -g serve
 
